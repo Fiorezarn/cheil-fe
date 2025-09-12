@@ -1,5 +1,5 @@
 import { Routes, Route } from 'react-router-dom';
-import MainPages from './pages/mainPages';
+import MainPages from './pages/MainPages';
 import ResponsePages from './pages/ResponsePages';
 
 export default function App() {
