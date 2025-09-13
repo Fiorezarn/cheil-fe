@@ -27,7 +27,6 @@ export default function MainPages() {
 
  const resetForm = () => {
   setFormData({ name: '', email: '', phone: '', image: null });
-  // Reset file input
   if (fileInputRef.current) {
    fileInputRef.current.value = '';
   }
@@ -44,7 +43,7 @@ export default function MainPages() {
 
   try {
    const res = await createSubmission(data);
-   resetForm(); // Use the new reset function
+   resetForm();
    toast.success(res.message, {
     position: 'top-right',
     autoClose: 5000,
@@ -57,7 +56,6 @@ export default function MainPages() {
     transition: Bounce,
    });
   } catch (err) {
-   resetForm();
    toast.error(err.message, {
     position: 'top-right',
     autoClose: 5000,
@@ -98,7 +96,7 @@ export default function MainPages() {
         value={formData.name}
         onChange={handleChange}
         className='w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent transition-all duration-200 bg-gray-50 hover:bg-white'
-        placeholder='Enter your full name'
+        placeholder='Lionel Messi'
         required
        />
       </div>
@@ -113,7 +111,7 @@ export default function MainPages() {
         value={formData.email}
         onChange={handleChange}
         className='w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent transition-all duration-200 bg-gray-50 hover:bg-white'
-        placeholder='Enter your email address'
+        placeholder='example@gmail.com'
         required
        />
       </div>
@@ -126,7 +124,7 @@ export default function MainPages() {
         value={formData.phone}
         onChange={handleChange}
         className='w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent transition-all duration-200 bg-gray-50 hover:bg-white'
-        placeholder='Enter your phone number'
+        placeholder='081234567890'
         required
        />
       </div>
