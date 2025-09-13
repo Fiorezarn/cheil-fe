@@ -12,10 +12,7 @@ Visit the live application: [https://submission-cheil.vercel.app/](https://submi
 - **📷 Image Upload**: Support for image file uploads with preview
 - **📊 Data Management**: View and manage all submissions in a structured table
 - **📱 Responsive Design**: Mobile-friendly interface that works on all devices
-- **🔍 Search & Filter**: Built-in data table functionality for easy data navigation
-- **📈 Statistics Dashboard**: Real-time statistics showing submission counts and trends
 - **🎨 Modern UI**: Beautiful gradient designs and smooth animations
-- **⚡ Fast Performance**: Optimized with Vite for lightning-fast development and builds
 
 ## 🛠️ Tech Stack
 
@@ -49,8 +46,8 @@ Make sure you have the following installed:
 1. **Clone the repository**
 
    ```bash
-   git clone <repository-url>
-   cd submission-management-system
+   git clone (https://github.com/Fiorezarn/cheil-fe.git)
+   cd cheil-fe
    ```
 
 2. **Install dependencies**
@@ -140,54 +137,8 @@ src/
 - **`npm run preview`** - Preview production build
 - **`npm run lint`** - Run ESLint for code quality
 
-## 🎨 Styling & Theming
-
-The application uses **Tailwind CSS** for styling with:
-
-- **Responsive design patterns**
-- **Gradient backgrounds** and modern aesthetics
-- **Smooth animations** and transitions
-- **Consistent color scheme**
-- **Mobile-first approach**
-
-## 📱 Browser Support
-
-- ✅ Chrome (latest)
-- ✅ Firefox (latest)
-- ✅ Safari (latest)
-- ✅ Edge (latest)
 
 ## 🚀 Deployment
 
 The application is deployed on **Vercel** and can be accessed at:
 [https://submission-cheil.vercel.app/](https://submission-cheil.vercel.app/)
-
-### Deploy Your Own
-
-1. **Fork this repository**
-2. **Connect to Vercel**
-3. **Set environment variables** in Vercel dashboard
-4. **Deploy automatically** on push to main branch
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 🙏 Acknowledgments
-
-- **React Team** for the amazing framework
-- **Tailwind CSS** for the utility-first approach
-- **Lucide** for beautiful icons
-- **Vercel** for seamless deployment
-
----
-
-**Built with ❤️ using React + Vite**
