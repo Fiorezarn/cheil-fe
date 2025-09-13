@@ -4,6 +4,7 @@ import { useState, useRef } from 'react';
 import { Bounce, toast } from 'react-toastify';
 import Logo from '../assets/logo.png';
 import { createSubmission } from '../service/api/submission';
+import { useNavigate } from 'react-router-dom';
 
 export default function MainPages() {
  const [formData, setFormData] = useState({
@@ -12,10 +13,9 @@ export default function MainPages() {
   phone: '',
   image: null,
  });
-
  const [isLoading, setIsLoading] = useState(false);
  const fileInputRef = useRef(null);
-
+ const navigate = useNavigate();
  const handleChange = (e) => {
   const { name, value, files } = e.target;
   if (name === 'image') {
@@ -47,24 +47,15 @@ export default function MainPages() {
    toast.success(res.message, {
     position: 'top-right',
     autoClose: 5000,
-    hideProgressBar: false,
-    closeOnClick: false,
-    pauseOnHover: true,
-    draggable: true,
-    progress: undefined,
-    theme: 'light',
     transition: Bounce,
    });
+   setTimeout(() => {
+    navigate('/response');
+   }, 1000);
   } catch (err) {
    toast.error(err.message, {
     position: 'top-right',
     autoClose: 5000,
-    hideProgressBar: false,
-    closeOnClick: false,
-    pauseOnHover: true,
-    draggable: true,
-    progress: undefined,
-    theme: 'light',
     transition: Bounce,
    });
   } finally {
