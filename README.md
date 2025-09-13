@@ -89,22 +89,6 @@ Make sure you have the following installed:
 
    Navigate to `http://localhost:5173` to view the application.
 
-## 📁 Project Structure
-
-```
-src/
-├── components/          # Reusable UI components
-│   └── ImageModal.jsx  # Image preview modal component
-├── pages/              # Main application pages
-│   ├── MainPages.jsx   # Form submission page
-│   └── ResponsePages.jsx # Data management page
-├── service/            # API service layer
-│   └── api/
-│       └── submission.js # API calls for submissions
-├── assets/             # Static assets (images, etc.)
-└── App.jsx            # Main application component
-```
-
 ## 🎯 Key Features Breakdown
 
 ### 1. Form Submission Page (`/`)
