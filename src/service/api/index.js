@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const getBaseURL = () => {
- const prefix = import.meta.env.VITE_HTTP_PREFIX;
+ const prefix = import.meta.env.VITE_PREFIX;
  const URL = import.meta.env.VITE_BASE_URL;
  return `${prefix}://${URL}/api/v1`;
 };

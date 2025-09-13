@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { Bounce, toast } from 'react-toastify';
 import Logo from '../assets/logo.png';
 import { createSubmission } from '../service/api/submission';
@@ -14,6 +14,7 @@ export default function MainPages() {
  });
 
  const [isLoading, setIsLoading] = useState(false);
+ const fileInputRef = useRef(null);
 
  const handleChange = (e) => {
   const { name, value, files } = e.target;
@@ -21,6 +22,14 @@ export default function MainPages() {
    setFormData({ ...formData, image: files[0] });
   } else {
    setFormData({ ...formData, [name]: value });
+  }
+ };
+
+ const resetForm = () => {
+  setFormData({ name: '', email: '', phone: '', image: null });
+  // Reset file input
+  if (fileInputRef.current) {
+   fileInputRef.current.value = '';
   }
  };
 
@@ -35,7 +44,7 @@ export default function MainPages() {
 
   try {
    const res = await createSubmission(data);
-   setFormData({ name: '', email: '', phone: '', image: null });
+   resetForm(); // Use the new reset function
    toast.success(res.message, {
     position: 'top-right',
     autoClose: 5000,
@@ -48,6 +57,7 @@ export default function MainPages() {
     transition: Bounce,
    });
   } catch (err) {
+   resetForm();
    toast.error(err.message, {
     position: 'top-right',
     autoClose: 5000,
@@ -124,6 +134,7 @@ export default function MainPages() {
       <div className='space-y-2'>
        <label className='text-sm font-medium text-gray-700'>Upload Image</label>
        <input
+        ref={fileInputRef} // Add the ref here
         type='file'
         name='image'
         accept='image/*'
